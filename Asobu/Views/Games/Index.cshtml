@@ -1,0 +1,23 @@
+﻿@model Asobu.ViewModels.Games.IndexViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Games</h2>
+
+<table class="table table-­bordered table-­hover">
+    <tr>
+        <th>
+            Title
+        </th>
+    </tr>
+    @foreach (var game in Model.Games)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink(game.Title, "Details", "Games", new { id = game.Id }, null)
+            </td>
+        </tr>
+    }
+</table>
