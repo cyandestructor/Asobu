@@ -34,7 +34,7 @@ namespace Asobu.Controllers
         // GET: Players
         public ActionResult Index()
         {
-            var model = new IndexViewModel() { Players = _players };
+            var model = new ViewModels.Players.IndexViewModel() { Players = _players };
             return View(model);
         }
     }
