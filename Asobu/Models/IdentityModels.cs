@@ -20,6 +20,10 @@ namespace Asobu.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<Player> Players { get; set; }
+
+        public DbSet<Game> Games { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
