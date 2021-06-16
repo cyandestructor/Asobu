@@ -27,7 +27,7 @@ namespace Asobu.Controllers
         [Route("Players/Details/{id:int}")]
         public ActionResult Details(int id)
         {
-            var player = _context.Players.SingleOrDefault(g => g.Id == id);
+            var player = _context.Players.Include(p => p.MembershipType).SingleOrDefault(g => g.Id == id);
 
             if(player == null)
             {
