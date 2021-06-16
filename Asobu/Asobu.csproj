@@ -216,9 +216,18 @@
     <Compile Include="Migrations\202106161650565_AddBirthdateToPlayer.Designer.cs">
       <DependentUpon>202106161650565_AddBirthdateToPlayer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106161720078_AddGenreToGame.cs" />
+    <Compile Include="Migrations\202106161720078_AddGenreToGame.Designer.cs">
+      <DependentUpon>202106161720078_AddGenreToGame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106161736236_PopulateGenres.cs" />
+    <Compile Include="Migrations\202106161736236_PopulateGenres.Designer.cs">
+      <DependentUpon>202106161736236_PopulateGenres.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Game.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
@@ -336,6 +345,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106161650565_AddBirthdateToPlayer.resx">
       <DependentUpon>202106161650565_AddBirthdateToPlayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106161720078_AddGenreToGame.resx">
+      <DependentUpon>202106161720078_AddGenreToGame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106161736236_PopulateGenres.resx">
+      <DependentUpon>202106161736236_PopulateGenres.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -13,5 +13,9 @@ namespace Asobu.Models
         [Required]
         [StringLength(255)]
         public string Title { get; set; }
+
+        public Genre Genre { get; set; }
+
+        public int? GenreId { get; set; }
     }
 }
