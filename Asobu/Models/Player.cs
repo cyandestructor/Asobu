@@ -9,5 +9,8 @@ namespace Asobu.Models
     {
         public int Id { get; set; }
         public string Username { get; set; }
+        public bool IsSubscribedToNewsletter { get; set; }
+        public MembershipType MembershipType { get; set; }
+        public byte MembershipTypeId { get; set; }
     }
 }
