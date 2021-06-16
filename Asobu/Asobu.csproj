@@ -192,6 +192,14 @@
     <Compile Include="Migrations\202106160318523_PopulateMembershipTypes.Designer.cs">
       <DependentUpon>202106160318523_PopulateMembershipTypes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106160531120_ApplyDataAnnotationsToGame.cs" />
+    <Compile Include="Migrations\202106160531120_ApplyDataAnnotationsToGame.Designer.cs">
+      <DependentUpon>202106160531120_ApplyDataAnnotationsToGame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106160534164_ApplyDataAnnotationsToPlayer.cs" />
+    <Compile Include="Migrations\202106160534164_ApplyDataAnnotationsToPlayer.Designer.cs">
+      <DependentUpon>202106160534164_ApplyDataAnnotationsToPlayer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Game.cs" />
@@ -294,6 +302,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106160318523_PopulateMembershipTypes.resx">
       <DependentUpon>202106160318523_PopulateMembershipTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106160531120_ApplyDataAnnotationsToGame.resx">
+      <DependentUpon>202106160531120_ApplyDataAnnotationsToGame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106160534164_ApplyDataAnnotationsToPlayer.resx">
+      <DependentUpon>202106160534164_ApplyDataAnnotationsToPlayer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
