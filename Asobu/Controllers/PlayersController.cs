@@ -1,40 +1,47 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data.Entity;
 using System.Web;
 using System.Web.Mvc;
 
 using Asobu.Models;
-using Asobu.ViewModels.Players;
 
 namespace Asobu.Controllers
 {
     public class PlayersController : Controller
     {
-        static private List<Player> _players = new List<Player>()
-        {
-            new Player(){Id=1, Username="Heroplayer321" },
-            new Player(){Id=2, Username="Masterlock50" }
-        };
+        private ApplicationDbContext _context;
 
-        [Route("games/details/{id:int}")]
+        public PlayersController()
+        {
+            _context = new ApplicationDbContext();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+            _context.Dispose();
+        }
+
+        [Route("Players/Details/{id:int}")]
         public ActionResult Details(int id)
         {
-            foreach (var player in _players)
+            var player = _context.Players.SingleOrDefault(g => g.Id == id);
+
+            if(player == null)
             {
-                if (player.Id == id)
-                {
-                    return View(player);
-                }
+                return HttpNotFound();
             }
 
-            return HttpNotFound();
+            return View(player);
         }
 
         // GET: Players
         public ActionResult Index()
         {
-            var model = new ViewModels.Players.IndexViewModel() { Players = _players };
+            var players = _context.Players.Include(p => p.MembershipType).ToList();
+            var model = new ViewModels.Players.IndexViewModel() { Players = players };
             return View(model);
         }
     }
