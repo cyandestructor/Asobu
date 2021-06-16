@@ -5,3 +5,23 @@
 }
 
 <h2>Details for: @Model.Title</h2>
+<ul>
+    @if (Model.Genre != null)
+    {
+        <li>
+            Genre: @Model.Genre.Name
+        </li>
+    }
+    @if (Model.ReleaseDate != null)
+    {
+        <li>
+            Release date: @Model.ReleaseDate.GetValueOrDefault().ToString("dd/MM/yyyy")
+        </li>
+    }
+    @if (Model.DateAdded != null)
+    {
+        <li>
+            Date added: @Model.DateAdded.GetValueOrDefault().ToString("dd/MM/yyyy")
+        </li>
+    }
+</ul>

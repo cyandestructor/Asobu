@@ -14,6 +14,10 @@ namespace Asobu.Models
         [StringLength(255)]
         public string Title { get; set; }
 
+        public DateTime? ReleaseDate { get; set; }
+
+        public DateTime? DateAdded { get; set; }
+
         public Genre Genre { get; set; }
 
         public int? GenreId { get; set; }

@@ -224,6 +224,14 @@
     <Compile Include="Migrations\202106161736236_PopulateGenres.Designer.cs">
       <DependentUpon>202106161736236_PopulateGenres.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106161744233_AddReleaseDateToGame.cs" />
+    <Compile Include="Migrations\202106161744233_AddReleaseDateToGame.Designer.cs">
+      <DependentUpon>202106161744233_AddReleaseDateToGame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106161745181_AddAddedDateToGame.cs" />
+    <Compile Include="Migrations\202106161745181_AddAddedDateToGame.Designer.cs">
+      <DependentUpon>202106161745181_AddAddedDateToGame.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Game.cs" />
@@ -351,6 +359,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106161736236_PopulateGenres.resx">
       <DependentUpon>202106161736236_PopulateGenres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106161744233_AddReleaseDateToGame.resx">
+      <DependentUpon>202106161744233_AddReleaseDateToGame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106161745181_AddAddedDateToGame.resx">
+      <DependentUpon>202106161745181_AddAddedDateToGame.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

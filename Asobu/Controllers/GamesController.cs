@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data.Entity;
 using System.Web;
 using System.Web.Mvc;
 
@@ -26,7 +27,7 @@ namespace Asobu.Controllers
         [Route("Games/Details/{id:int}")]
         public ActionResult Details(int id)
         {
-            var game = _context.Games.SingleOrDefault(g => g.Id == id);
+            var game = _context.Games.Include(g => g.Genre).SingleOrDefault(g => g.Id == id);
 
             if (game == null)
             {
@@ -39,7 +40,8 @@ namespace Asobu.Controllers
         // GET: Games
         public ActionResult Index()
         {
-            var model = new ViewModels.Games.IndexViewModel() { Games = _context.Games.ToList() };
+            var games = _context.Games.Include(g => g.Genre).ToList();
+            var model = new ViewModels.Games.IndexViewModel() { Games = games };
             return View(model);
         }
     }

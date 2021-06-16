@@ -11,12 +11,25 @@
         <th>
             Title
         </th>
+        <th>
+            Genre
+        </th>
     </tr>
     @foreach (var game in Model.Games)
     {
         <tr>
             <td>
                 @Html.ActionLink(game.Title, "Details", "Games", new { id = game.Id }, null)
+            </td>
+            <td>
+                @{ 
+                    string genre = "None";
+                    if (game.Genre != null)
+                    {
+                        genre = game.Genre.Name;
+                    }
+                }
+                @genre
             </td>
         </tr>
     }
