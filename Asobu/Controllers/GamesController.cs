@@ -5,38 +5,41 @@ using System.Web;
 using System.Web.Mvc;
 
 using Asobu.Models;
-using Asobu.ViewModels.Games;
 
 namespace Asobu.Controllers
 {
     public class GamesController : Controller
     {
-        static private List<Game> _games = new List<Game>()
+        private ApplicationDbContext _context;
+
+        public GamesController()
         {
-            new Game() {Id = 1, Title = "Animal Crossing: New Horizons" },
-            new Game() {Id = 2, Title = "Bloodborne" },
-            new Game() {Id = 3, Title = "Dark Souls III" },
-            new Game() {Id = 4, Title = "Terraria" }
-        };
+            _context = new ApplicationDbContext();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+            _context.Dispose();
+        }
 
         [Route("Games/Details/{id:int}")]
         public ActionResult Details(int id)
         {
-            foreach (var game in _games)
+            var game = _context.Games.SingleOrDefault(g => g.Id == id);
+
+            if (game == null)
             {
-                if(game.Id == id)
-                {
-                    return View(game);
-                }
+                return HttpNotFound();
             }
 
-            return HttpNotFound();
+            return View(game);
         }
 
         // GET: Games
         public ActionResult Index()
         {
-            var model = new ViewModels.Games.IndexViewModel() { Games = _games };
+            var model = new ViewModels.Games.IndexViewModel() { Games = _context.Games.ToList() };
             return View(model);
         }
     }
