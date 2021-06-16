@@ -12,7 +12,7 @@
             Username
         </th>
         <th>
-            Subscription in months
+            Membership Type
         </th>
     </tr>
     @foreach (var player in Model.Players)
@@ -22,7 +22,7 @@
                 @Html.ActionLink(player.Username, "Details", "Players", new { id = player.Id }, null)
             </td>
             <td>
-                @player.MembershipType.DurationInMonths months
+                @player.MembershipType.Name
             </td>
         </tr>
     }

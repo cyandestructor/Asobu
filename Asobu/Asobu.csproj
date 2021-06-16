@@ -200,6 +200,18 @@
     <Compile Include="Migrations\202106160534164_ApplyDataAnnotationsToPlayer.Designer.cs">
       <DependentUpon>202106160534164_ApplyDataAnnotationsToPlayer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106161558247_AddNameToMembershipType.cs" />
+    <Compile Include="Migrations\202106161558247_AddNameToMembershipType.Designer.cs">
+      <DependentUpon>202106161558247_AddNameToMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106161559493_SetMembershipTypesNames.cs" />
+    <Compile Include="Migrations\202106161559493_SetMembershipTypesNames.Designer.cs">
+      <DependentUpon>202106161559493_SetMembershipTypesNames.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106161606130_SetMembershipTypeNameRequired.cs" />
+    <Compile Include="Migrations\202106161606130_SetMembershipTypeNameRequired.Designer.cs">
+      <DependentUpon>202106161606130_SetMembershipTypeNameRequired.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Game.cs" />
@@ -308,6 +320,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106160534164_ApplyDataAnnotationsToPlayer.resx">
       <DependentUpon>202106160534164_ApplyDataAnnotationsToPlayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106161558247_AddNameToMembershipType.resx">
+      <DependentUpon>202106161558247_AddNameToMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106161559493_SetMembershipTypesNames.resx">
+      <DependentUpon>202106161559493_SetMembershipTypesNames.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106161606130_SetMembershipTypeNameRequired.resx">
+      <DependentUpon>202106161606130_SetMembershipTypeNameRequired.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
