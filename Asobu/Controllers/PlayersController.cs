@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 
 using Asobu.Models;
+using Asobu.ViewModels.Players;
 
 namespace Asobu.Controllers
 {
@@ -22,6 +23,29 @@ namespace Asobu.Controllers
         {
             base.Dispose(disposing);
             _context.Dispose();
+        }
+
+        [HttpPost]
+        public ActionResult Save(Player player)
+        {
+            if (player.Id == 0)
+            {
+                _context.Players.Add(player);
+            }
+
+            _context.SaveChanges();
+
+            return RedirectToAction("Index", "Players");
+        }
+
+        public ActionResult New()
+        {
+            var model = new NewViewModel()
+            {
+                MembershipTypes = _context.MembershipTypes.ToList()
+            };
+
+            return View(model);
         }
 
         [Route("Players/Details/{id:int}")]
