@@ -244,7 +244,7 @@
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\Games\IndexViewModel.cs" />
     <Compile Include="ViewModels\Players\IndexViewModel.cs" />
-    <Compile Include="ViewModels\Players\NewViewModel.cs" />
+    <Compile Include="ViewModels\Players\PlayerFormViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -307,7 +307,7 @@
     <Content Include="Views\Players\Details.cshtml" />
     <Content Include="Views\Players\Index.cshtml" />
     <Content Include="Views\Shared\_Navbar.cshtml" />
-    <Content Include="Views\Players\New.cshtml" />
+    <Content Include="Views\Players\PlayerForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

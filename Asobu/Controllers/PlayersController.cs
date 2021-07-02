@@ -40,12 +40,12 @@ namespace Asobu.Controllers
 
         public ActionResult New()
         {
-            var model = new NewViewModel()
+            var model = new PlayerFormViewModel()
             {
                 MembershipTypes = _context.MembershipTypes.ToList()
             };
 
-            return View(model);
+            return View("PlayerForm", model);
         }
 
         [Route("Players/Details/{id:int}")]

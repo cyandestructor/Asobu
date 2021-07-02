@@ -7,7 +7,7 @@ using Asobu.Models;
 
 namespace Asobu.ViewModels.Players
 {
-    public class NewViewModel
+    public class PlayerFormViewModel
     {
         public Player Player { get; set; }
 
