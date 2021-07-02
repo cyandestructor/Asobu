@@ -32,10 +32,36 @@ namespace Asobu.Controllers
             {
                 _context.Players.Add(player);
             }
+            else
+            {
+                var original = _context.Players.Single(p => p.Id == player.Id);
+                original.Username = player.Username;
+                original.Birthdate = player.Birthdate;
+                original.IsSubscribedToNewsletter = player.IsSubscribedToNewsletter;
+                original.MembershipTypeId = player.MembershipTypeId;
+            }
 
             _context.SaveChanges();
 
             return RedirectToAction("Index", "Players");
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var player = _context.Players.SingleOrDefault(p => p.Id == id);
+
+            if (player == null)
+            {
+                return HttpNotFound();
+            }
+
+            var model = new PlayerFormViewModel()
+            {
+                MembershipTypes = _context.MembershipTypes.ToList(),
+                Player = player
+            };
+
+            return View("PlayerForm", model);
         }
 
         public ActionResult New()

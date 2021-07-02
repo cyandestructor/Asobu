@@ -6,6 +6,8 @@
 
 <h2>Players</h2>
 
+@Html.ActionLink("Create New Player", "New", "Players", new { @class = "btn btn-primary" })
+
 <table class="table table-­bordered table-­hover">
     <tr>
         <th>
@@ -19,7 +21,7 @@
     {
         <tr>
             <td>
-                @Html.ActionLink(player.Username, "Details", "Players", new { id = player.Id }, null)
+                @Html.ActionLink(player.Username, "Edit", "Players", new { id = player.Id }, null)
             </td>
             <td>
                 @player.MembershipType.Name

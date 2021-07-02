@@ -4,7 +4,16 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>New Player</h2>
+@{
+    var header = "New Player";
+
+    if (Model.Player != null)
+    {
+        header = "Edit: " + Model.Player.Username;
+    }
+}
+
+<h2>@header</h2>
 
 @using (Html.BeginForm("Save", "Players"))
 {
@@ -15,7 +24,7 @@
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Player.Birthdate)
-        @Html.TextBoxFor(m => m.Player.Birthdate, "{0: dd mm yyyy}", new { @class = "form-control" })
+        @Html.TextBoxFor(m => m.Player.Birthdate, "{0: dd/MM/yyyy}", new { @class = "form-control" })
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Player.MembershipTypeId)
