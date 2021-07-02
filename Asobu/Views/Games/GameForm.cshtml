@@ -4,7 +4,11 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>New</h2>
+@{ 
+    var header = Model.Game != null ? ("Edit: " + Model.Game.Title) : "New Game";
+}
+
+<h2>@header</h2>
 
 @using (Html.BeginForm("Save", "Games"))
 {
@@ -15,11 +19,11 @@
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Game.ReleaseDate)
-        @Html.TextBoxFor(m => m.Game.ReleaseDate, new { @class = "form-control" })
+        @Html.TextBoxFor(m => m.Game.ReleaseDate, "{0: dd/MM/yyyy}", new { @class = "form-control" })
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Game.DateAdded)
-        @Html.TextBoxFor(m => m.Game.DateAdded, new { @class = "form-control" })
+        @Html.TextBoxFor(m => m.Game.DateAdded, "{0: dd/MM/yyyy}", new { @class = "form-control" })
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Game.GenreId)

@@ -45,7 +45,25 @@ namespace Asobu.Controllers
                 Genres = _context.Genres.ToList()
             };
 
-            return View(model);
+            return View("GameForm", model);
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var game = _context.Games.SingleOrDefault(g => g.Id == id);
+            
+            if (game == null)
+            {
+                return HttpNotFound();
+            }
+
+            var model = new GameFormViewModel()
+            {
+                Game = game,
+                Genres = _context.Genres.ToList()
+            };
+
+            return View("GameForm", model);
         }
 
         public ActionResult Save(Game game)
@@ -53,6 +71,14 @@ namespace Asobu.Controllers
             if (game.Id == 0)
             {
                 _context.Games.Add(game);
+            }
+            else
+            {
+                var original = _context.Games.Single(g => g.Id == game.Id);
+                original.Title = game.Title;
+                original.ReleaseDate = game.ReleaseDate;
+                original.DateAdded = game.DateAdded;
+                original.GenreId = game.GenreId;
             }
 
             _context.SaveChanges();
