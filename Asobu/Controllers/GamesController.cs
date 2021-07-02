@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 
 using Asobu.Models;
+using Asobu.ViewModels.Games;
 
 namespace Asobu.Controllers
 {
@@ -35,6 +36,28 @@ namespace Asobu.Controllers
             }
 
             return View(game);
+        }
+
+        public ActionResult New()
+        {
+            var model = new GameFormViewModel()
+            {
+                Genres = _context.Genres.ToList()
+            };
+
+            return View(model);
+        }
+
+        public ActionResult Save(Game game)
+        {
+            if (game.Id == 0)
+            {
+                _context.Games.Add(game);
+            }
+
+            _context.SaveChanges();
+
+            return RedirectToAction("Index", "Games");
         }
 
         // GET: Games

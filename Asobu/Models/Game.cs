@@ -14,12 +14,15 @@ namespace Asobu.Models
         [StringLength(255)]
         public string Title { get; set; }
 
+        [Display(Name = "Release date")]
         public DateTime? ReleaseDate { get; set; }
 
+        [Display(Name = "Date added")]
         public DateTime? DateAdded { get; set; }
 
         public Genre Genre { get; set; }
 
+        [Display(Name = "Genre")]
         public int? GenreId { get; set; }
     }
 }
